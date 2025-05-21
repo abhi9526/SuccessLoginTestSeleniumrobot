@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-21T12:17:43.774223" rpa="false" schemaversion="5">
+<suite id="s1" name="Login Test" source="C:\Users\Abhilsh\Downloads\selenium_robot_login_test\selenium_robot_login_test\tests\login_test.robot">
+<test id="s1-t1" name="Successful Login With Valid Credentials" line="7">
+<kw name="Open Login Page" owner="login_keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-21T12:17:44.435510" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>${LOGIN_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-21T12:17:44.434995" elapsed="82.194026"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-21T12:19:06.630409" elapsed="0.087815"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id:user-name</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-21T12:19:06.718846" elapsed="0.066663"/>
+</kw>
+<status status="PASS" start="2025-05-21T12:17:44.433700" elapsed="82.352138"/>
+</kw>
+<kw name="Input Username" owner="login_keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-21T12:19:06.788325" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
+<arg>id:user-name</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-21T12:19:06.787770" elapsed="0.324944"/>
+</kw>
+<arg>standard_user</arg>
+<status status="PASS" start="2025-05-21T12:19:06.786821" elapsed="0.326129"/>
+</kw>
+<kw name="Input Password" owner="login_keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-21T12:19:07.114889" level="INFO">Typing text 'secret_sauce' into text field 'id:password'.</msg>
+<arg>id:password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-21T12:19:07.114469" elapsed="0.176000"/>
+</kw>
+<arg>secret_sauce</arg>
+<status status="PASS" start="2025-05-21T12:19:07.113760" elapsed="0.176957"/>
+</kw>
+<kw name="Click Login Button" owner="login_keywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-21T12:19:07.292399" level="INFO">Clicking button 'id:login-button'.</msg>
+<arg>id:login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-21T12:19:07.292085" elapsed="0.349207"/>
+</kw>
+<status status="PASS" start="2025-05-21T12:19:07.291595" elapsed="0.349986"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-21T12:19:07.696254" level="INFO">Current page contains element 'xpath://div[@class='inventory_list']'.</msg>
+<arg>xpath://div[@class='inventory_list']</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-05-21T12:19:07.643137" elapsed="0.053304"/>
+</kw>
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-05-21T12:19:07.699139" elapsed="2.315324"/>
+</kw>
+<status status="PASS" start="2025-05-21T12:19:07.697963" elapsed="2.316840"/>
+</kw>
+<tag>smoke</tag>
+<status status="PASS" start="2025-05-21T12:17:44.432316" elapsed="85.583718"/>
+</test>
+<doc>Sample login test using Selenium + Robot Framework</doc>
+<status status="PASS" start="2025-05-21T12:17:43.777516" elapsed="86.240375"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">smoke</stat>
+</tag>
+<suite>
+<stat name="Login Test" id="s1" pass="1" fail="0" skip="0">Login Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -5,21 +5,11 @@ ${OPTIONS}         add_argument(--headless)    add_argument(--no-sandbox)    add
 
 *** Keywords ***
 Open Login Page
-    Open Browser    ${LOGIN_URL}    ${BROWSER}    options=${OPTIONS}
+    ${options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys
+    Call Method    ${options}    add_argument    --headless
+    Call Method    ${options}    add_argument    --no-sandbox
+    Call Method    ${options}    add_argument    --disable-dev-shm-usage
+    Create Webdriver    Chrome    chrome_options=${options}
+    Go To    ${LOGIN_URL}
     Maximize Browser Window
     Wait Until Page Contains Element    id:user-name    timeout=10s
-
-
-Input Username
-    [Arguments]    ${username}
-    Input Text    id:user-name    ${username}
-
-Input Password
-    [Arguments]    ${password}
-    Input Text    id:password    ${password}
-
-Click Login Button
-    Click Button    id:login-button
-
-Close Browser
-    Close All Browsers
